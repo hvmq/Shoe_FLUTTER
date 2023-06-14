@@ -171,6 +171,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                         fontSize: 25, fontFamily: "Rubik-Bold"),
                                   ),
                                 ),
+                                
                                 Positioned(
                                   right: 20,
                                   top: 60,
@@ -180,7 +181,12 @@ class _HomeScreenState extends State<HomeScreen> {
                                         fontSize: 25, fontFamily: "Rubik-Bold"),
                                   ),
                                 ),
-                                Positioned(
+                                cartData.carts.isEmpty
+                                      ? const Positioned(
+                                        left: 20,
+                                        top: 100,
+                                        child: Text('Your cart is empty.'))
+                                :Positioned(
                                     left: 20,
                                     bottom: 0,
                                     child: SizedBox(
