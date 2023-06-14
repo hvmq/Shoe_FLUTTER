@@ -3,7 +3,7 @@ const MANIFEST = 'flutter-app-manifest';
 const TEMP = 'flutter-temp-cache';
 const CACHE_NAME = 'flutter-app-cache';
 const RESOURCES = {
-  "assets/AssetManifest.json": "ed30e444579f47ced14f4258e6163dbc",
+  "assets/AssetManifest.json": "bace291349e8cb7a3df148c62a8a563d",
 "assets/assets/fonts/Rubik-Bold.ttf": "3e84b9e91636be0299ae44f99135b6d2",
 "assets/assets/fonts/Rubik-Light.ttf": "5f5803d6512478bbd7abbe8eb0d3891a",
 "assets/assets/fonts/Rubik-SemiBold.ttf": "67a1f1242b6467e905b32ba521228454",
@@ -12,6 +12,7 @@ const RESOURCES = {
 "assets/assets/images/minus.png": "53af857c7f88b6f4ea25789ccf49b390",
 "assets/assets/images/nike.png": "5b037edcfc01f8b3e739e76652982da2",
 "assets/assets/images/plus.png": "522354fa47af956ebe780787bcfe4d9d",
+"assets/assets/images/result.png": "e977358714efa315679130e8ad522931",
 "assets/assets/images/trash.png": "3d99532da0f37d5476b904cc79048789",
 "assets/FontManifest.json": "7eb334f7852e74f0c5c8a2d3577c3d36",
 "assets/fonts/MaterialIcons-Regular.otf": "e7069dfd19b331be16bed984668fe080",
@@ -27,9 +28,9 @@ const RESOURCES = {
 "icons/Icon-512.png": "17ab748ee67153a34d07b18cbaba25f5",
 "icons/Icon-maskable-192.png": "3d48ff153cdeb20321d4661381848ae6",
 "icons/Icon-maskable-512.png": "17ab748ee67153a34d07b18cbaba25f5",
-"index.html": "665cc60a4dbf8d2cfd41e36ecd09869f",
-"/": "665cc60a4dbf8d2cfd41e36ecd09869f",
-"main.dart.js": "43d357e146cb7eb9edefc4c2fe011504",
+"index.html": "70a2e6743e8abf08679787fbdaa03123",
+"/": "70a2e6743e8abf08679787fbdaa03123",
+"main.dart.js": "4c0fc7f653cb44dd9e1bf9c615d764f8",
 "manifest.json": "69d18906f452041b11657b542552358b",
 "version.json": "43d633297f7aa0134e2ae57cf3c3f17c"
 };
