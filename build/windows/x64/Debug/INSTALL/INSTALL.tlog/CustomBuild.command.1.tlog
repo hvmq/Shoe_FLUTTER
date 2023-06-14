@@ -1,0 +1,10 @@
+^D:\ANDROID\SHOES_SHOP\BUILD\WINDOWS\CMAKEFILES\6DD13A7E2F22B9062123B1CBCB00B6D5\INSTALL_FORCE.RULE
+setlocal
+cd .
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
