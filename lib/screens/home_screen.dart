@@ -175,7 +175,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   right: 20,
                                   top: 60,
                                   child: Text(
-                                    "\$${(totalCart(cartData.carts)).toStringAsFixed(2)}}",
+                                    "\$${(totalCart(cartData.carts)).toStringAsFixed(2)}",
                                     style: const TextStyle(
                                         fontSize: 25, fontFamily: "Rubik-Bold"),
                                   ),
