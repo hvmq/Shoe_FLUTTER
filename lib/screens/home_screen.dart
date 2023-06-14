@@ -110,18 +110,17 @@ class _HomeScreenState extends State<HomeScreen> {
                                         SizedBox(
                                           height: 490,
                                           width: 310,
-                                          child: SingleChildScrollView(
-                                            child: ListView.builder(
-                                                shrinkWrap: true,
-                                                itemCount:
-                                                    shoeData.shoes.length,
-                                                itemBuilder: (context, index) {
-                                                  return ListItemShop(
-                                                      shoe:
-                                                          shoeData.shoes[index],
-                                                      onClicked: () {});
-                                                }),
-                                          ),
+                                          child: ListView.builder(
+                                              shrinkWrap: true,
+                                              itemCount:
+                                                  shoeData.shoes.length,
+                                              itemBuilder: (context, index) {
+                                                return ListItemShop(
+                                                    shoe:
+                                                        shoeData.shoes[index],
+                                                    onClicked: () {});
+                                              },
+                                              ),
                                         )),
                               ),
                             ],
@@ -192,17 +191,15 @@ class _HomeScreenState extends State<HomeScreen> {
                                     child: SizedBox(
                                       height: 490,
                                       width: 310,
-                                      child: SingleChildScrollView(
-                                        child: ListView.builder(
-                                            shrinkWrap: true,
-                                            itemCount: cartData.carts.length,
-                                            itemBuilder: (context, index) {
-                                              return ListItemCart(
-                                                cart: cartData.carts[index],
-                                                index: index,
-                                              );
-                                            }),
-                                      ),
+                                      child: ListView.builder(
+                                          shrinkWrap: true,
+                                          itemCount: cartData.carts.length,
+                                          itemBuilder: (context, index) {
+                                            return ListItemCart(
+                                              cart: cartData.carts[index],
+                                              index: index,
+                                            );
+                                          }),
                                     )),
                               ],
                             ),
@@ -265,18 +262,16 @@ class _HomeScreenState extends State<HomeScreen> {
                                         SizedBox(
                                           height: 490,
                                           width: 310,
-                                          child: SingleChildScrollView(
-                                            child: ListView.builder(
-                                                shrinkWrap: true,
-                                                itemCount: shoeData.shoes.length,
-                                                itemBuilder: (context, index) {
-                                                  return ListItemShop(
-                                                      shoe: shoeData.shoes[index],
-                                                      onClicked: () {
-                                                        setState(() {});
-                                                      });
-                                                }),
-                                          ),
+                                          child: ListView.builder(
+                                              shrinkWrap: true,
+                                              itemCount: shoeData.shoes.length,
+                                              itemBuilder: (context, index) {
+                                                return ListItemShop(
+                                                    shoe: shoeData.shoes[index],
+                                                    onClicked: () {
+                                                      setState(() {});
+                                                    });
+                                              }),
                                         )),
                               ),
                             ],
@@ -345,19 +340,17 @@ class _HomeScreenState extends State<HomeScreen> {
                                     bottom: 0,
                                     child: SizedBox(
                                       height: 490,
-                                      width: 310,
+                                      width: 315,
                                       child: 
-                                      SingleChildScrollView(
-                                        child: ListView.builder(
-                                            shrinkWrap: true,
-                                            itemCount: cartData.carts.length,
-                                            itemBuilder: (context, index) {
-                                              return ListItemCart(
-                                                cart: cartData.carts[index],
-                                                index: index,
-                                              );
-                                            }),
-                                      ),
+                                      ListView.builder(
+                                          shrinkWrap: true,
+                                          itemCount: cartData.carts.length,
+                                          itemBuilder: (context, index) {
+                                            return ListItemCart(
+                                              cart: cartData.carts[index],
+                                              index: index,
+                                            );
+                                          }),
                                     )),
                               ],
                             ),

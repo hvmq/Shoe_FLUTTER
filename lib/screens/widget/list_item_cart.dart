@@ -29,162 +29,159 @@ class _ListItemCartState extends State<ListItemCart> {
     String? colorShoe = widget.cart.color?.substring(1);
     final cartProvider = Provider.of<CartProvider>(context, listen: false);
 
-    return Padding(
-      padding: const EdgeInsets.only(left: 10),
-      child: Stack(
-        children: [
-          Container(
-            child: Stack(
-              children: [
-                Positioned(
-                  top: 10,
-                  child: Container(
-                    height: 80,
-                    width: 80,
-                    decoration: BoxDecoration(
-                        color: Color(int.parse('0xFF${colorShoe!}')),
-                        shape: BoxShape.circle),
-                  ),
+    return Stack(
+      children: [
+        Container(
+          child: Stack(
+            children: [
+              Positioned(
+                top: 10,
+                child: Container(
+                  height: 80,
+                  width: 80,
+                  decoration: BoxDecoration(
+                      color: Color(int.parse('0xFF${colorShoe!}')),
+                      shape: BoxShape.circle),
                 ),
-                Transform.rotate(
-                    angle: -pi / 7,
-                    origin: const Offset(-110, 50),
-                    child: Image.network(
-                      "${widget.cart.image}",
-                      height: 150,
-                      width: 150,
-                    )),
-              ],
-            ),
+              ),
+              Transform.rotate(
+                  angle: -pi / 7,
+                  origin: const Offset(-110, 50),
+                  child: Image.network(
+                    "${widget.cart.image}",
+                    height: 150,
+                    width: 150,
+                  )),
+            ],
           ),
-          Positioned(
-            left: 115,
-            right: 0,
-            top: 10,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  '${widget.cart.name}',
-                  style: const TextStyle(
-                    fontSize: 15,
-                    fontFamily: 'Rubik-Bold',
-                  ),
+        ),
+        Positioned(
+          left: 110,
+          right: 0,
+          top: 10,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                '${widget.cart.name}',
+                style: const TextStyle(
+                  fontSize: 15,
+                  fontFamily: 'Rubik-Bold',
                 ),
-                const SizedBox(
-                  height: 10,
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              Text(
+                "\$${widget.cart.price}",
+                style: const TextStyle(
+                  fontSize: 18,
+                  fontFamily: 'Rubik-Bold',
                 ),
-                Text(
-                  "\$${widget.cart.price}",
-                  style: const TextStyle(
-                    fontSize: 18,
-                    fontFamily: 'Rubik-Bold',
-                  ),
-                ),
-                const SizedBox(
-                  height: 10,
-                ),
-                Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor:
-                              const Color(0xFFe1e7ed).withOpacity(0.7),
-                          shape: const CircleBorder(
-                            side: BorderSide.none,
-                          ),
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor:
+                            const Color(0xFFe1e7ed).withOpacity(0.7),
+                        shape: const CircleBorder(
+                          side: BorderSide.none,
                         ),
-                        onPressed: () {
-                          if (widget.cart.number == 1) {
-                            cartProvider
-                                .removeShoeInCart(widget.index)
-                                .whenComplete(() {
-                              cartProvider.getAllShoeInCart();
-                              
-                            });
-                            setState(() {});
-                          } else {
-                            cartProvider
-                                .updateShoeInCart(
-                                    Cart(
-                                        id: widget.cart.id,
-                                        image: widget.cart.image,
-                                        name: widget.cart.name,
-                                        number: widget.cart.number! - 1,
-                                        color: widget.cart.color,
-                                        price: widget.cart.price),
-                                    widget.index)
-                                .whenComplete(
-                                    () => cartProvider.getAllShoeInCart());
-                          }
-                        },
-                        child: Image.asset(
-                          'assets/images/minus.png',
-                          height: 8,
-                          width: 8,
-                        )),
-                    Padding(
-                      padding: const EdgeInsets.only(top: 8),
-                      child: Text(
-                        '${widget.cart.number}',
-                        style: const TextStyle(
-                            fontSize: 14, fontFamily: 'Rubik-Light'),
                       ),
-                    ),
-                    ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor:
-                              const Color(0xFFe1e7ed).withOpacity(0.7),
-                          shape: const CircleBorder(
-                            side: BorderSide.none,
-                          ),
-                        ),
-                        onPressed: () {
+                      onPressed: () {
+                        if (widget.cart.number == 1) {
+                          cartProvider
+                              .removeShoeInCart(widget.index)
+                              .whenComplete(() {
+                            cartProvider.getAllShoeInCart();
+                            
+                          });
+                          setState(() {});
+                        } else {
                           cartProvider
                               .updateShoeInCart(
                                   Cart(
                                       id: widget.cart.id,
                                       image: widget.cart.image,
                                       name: widget.cart.name,
-                                      number: widget.cart.number! + 1,
+                                      number: widget.cart.number! - 1,
                                       color: widget.cart.color,
                                       price: widget.cart.price),
                                   widget.index)
                               .whenComplete(
                                   () => cartProvider.getAllShoeInCart());
-                        },
-                        child: Image.asset(
-                          'assets/images/plus.png',
-                          height: 8,
-                          width: 8,
-                        )),
-                    ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: AppColor.colorYellow,
-                          shape: const CircleBorder(
-                            side: BorderSide.none,
-                          ),
+                        }
+                      },
+                      child: Image.asset(
+                        'assets/images/minus.png',
+                        height: 7,
+                        width: 7,
+                      )),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 8),
+                    child: Text(
+                      '${widget.cart.number}',
+                      style: const TextStyle(
+                          fontSize: 14, fontFamily: 'Rubik-Light'),
+                    ),
+                  ),
+                  ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor:
+                            const Color(0xFFe1e7ed).withOpacity(0.7),
+                        shape: const CircleBorder(
+                          side: BorderSide.none,
                         ),
-                        onPressed: () {
-                          cartProvider
-                              .removeShoeInCart(widget.index)
-                              .whenComplete(() {
-                            cartProvider.getAllShoeInCart();
-                          });
-                        },
-                        child: Image.asset(
-                          'assets/images/trash.png',
-                          height: 15,
-                          width: 15,
-                        ))
-                  ],
-                )
-              ],
-            ),
-          )
-        ],
-      ),
+                      ),
+                      onPressed: () {
+                        cartProvider
+                            .updateShoeInCart(
+                                Cart(
+                                    id: widget.cart.id,
+                                    image: widget.cart.image,
+                                    name: widget.cart.name,
+                                    number: widget.cart.number! + 1,
+                                    color: widget.cart.color,
+                                    price: widget.cart.price),
+                                widget.index)
+                            .whenComplete(
+                                () => cartProvider.getAllShoeInCart());
+                      },
+                      child: Image.asset(
+                        'assets/images/plus.png',
+                        height: 7,
+                        width: 7,
+                      )),
+                  ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: AppColor.colorYellow,
+                        shape: const CircleBorder(
+                          side: BorderSide.none,
+                        ),
+                      ),
+                      onPressed: () {
+                        cartProvider
+                            .removeShoeInCart(widget.index)
+                            .whenComplete(() {
+                          cartProvider.getAllShoeInCart();
+                        });
+                      },
+                      child: Image.asset(
+                        'assets/images/trash.png',
+                        height: 15,
+                        width: 15,
+                      ))
+                ],
+              )
+            ],
+          ),
+        )
+      ],
     );
   }
 }
